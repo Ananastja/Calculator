@@ -12,7 +12,7 @@ public enum RomanNumerals {
     IX,
     X;
 
-    public static void calculateRoman(String a, String b, String oper) {
+    public static String calculateRoman(String a, String b, String oper) {
         RomanNumerals first = findByName(a);
         RomanNumerals second = findByName(b);
 
@@ -34,7 +34,7 @@ public enum RomanNumerals {
             default:
                 throw new IllegalArgumentException();
         }
-        System.out.println(result);
+        return  result;
 
     }
 

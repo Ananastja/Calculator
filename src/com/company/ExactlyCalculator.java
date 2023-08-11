@@ -3,9 +3,10 @@ package com.company;
 
 public class ExactlyCalculator {
 
-    public static void getNumbers(String expression) {
+    public static String getNumbers(String expression) {
 
         String operand = "";
+        String res = "";
         String firstDigit, secondDigit;
 
         String[] arr = expression.split("[+-/*]");
@@ -19,12 +20,14 @@ public class ExactlyCalculator {
 
         try {
             if (Integer.parseInt(firstDigit) > 0 && Integer.parseInt(firstDigit) < 10 && Integer.parseInt(secondDigit) > 0 && Integer.parseInt(secondDigit) < 10) {
-                ArabianNumerals.calculateArabian(Integer.parseInt(firstDigit), Integer.parseInt(secondDigit), operand);
+                res = ArabianNumerals.calculateArabian(Integer.parseInt(firstDigit), Integer.parseInt(secondDigit), operand);
+                return res;
             } else {
                 throw new IllegalArgumentException();
             }
         } catch (NumberFormatException e) {
-            RomanNumerals.calculateRoman(firstDigit.toUpperCase(), secondDigit.toUpperCase(), operand);
+            res = RomanNumerals.calculateRoman(firstDigit.toUpperCase(), secondDigit.toUpperCase(), operand);
+            return res;
         } catch (Exception e) {
             throw e;
         }

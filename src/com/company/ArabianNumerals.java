@@ -1,7 +1,7 @@
 package com.company;
 
 public class ArabianNumerals {
-    public static void calculateArabian(int a, int b, String oper) {
+    public static String calculateArabian(int a, int b, String oper) {
         int result;
         try {
             switch (oper) {
@@ -20,7 +20,7 @@ public class ArabianNumerals {
                 default:
                     throw new IllegalArgumentException();
             }
-            System.out.println(result);
+            return Integer.toString(result);
         } catch (NullPointerException e) {
             throw e;
         }
